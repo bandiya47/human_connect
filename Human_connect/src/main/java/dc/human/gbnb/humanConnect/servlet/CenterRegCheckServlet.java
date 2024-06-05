@@ -30,12 +30,7 @@ public class CenterRegCheckServlet extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 
-//        Part part = request.getPart("vUploadFilePath");
-//        String fileName = request.getParameter("vUploadFilePath");
-//        if (!fileName.isEmpty()) {
-//            part.write("C:\\Test\\"+fileName);
-//        }
-		
+//
 		String vTitle = request.getParameter("vTitle");
 		String vStartDate = request.getParameter("vStartDate");
 		String vEndDate = request.getParameter("vEndDate");
@@ -67,36 +62,6 @@ public class CenterRegCheckServlet extends HttpServlet {
 		
 		CenterRegDAO dao = new CenterRegDAO();
 		dao.addCenterReg(CenterRegDTO);
-//		dao.listCenterReg(CenterRegDTO);
-		
-//		request.setAttribute("vTitle", CenterRegDTO.getvTitle());	
-//		request.setAttribute("vStartDate", CenterRegDTO.getvStartDate());
-//		request.setAttribute("vEndDate", CenterRegDTO.getvEndDate());
-//		request.setAttribute("vStartTime", CenterRegDTO.getvStartTime());
-//		request.setAttribute("vLastTime", CenterRegDTO.getvLastTime());
-//		request.setAttribute("vRStartDate", CenterRegDTO.getvRStartDate());
-//		request.setAttribute("vREndDate", CenterRegDTO.getvREndDate());
-//		request.setAttribute("vWorkingDay", CenterRegDTO.getvWorkingDay());
-//		request.setAttribute("vServiceCode", CenterRegDTO.getvServiceCode());
-//		request.setAttribute("vRegAmnt", CenterRegDTO.getvRegAmnt());
-//		request.setAttribute("vUploadFilePath", CenterRegDTO.getvUploadFilePath());
-//		request.setAttribute("vInfo", CenterRegDTO.getvInfo());
-		
-		
-		
-//		if (result) {
-//			HttpSession session = request.getSession();
-//			session.setAttribute("isLogon", true);
-//			session.setAttribute("login.id",  user_id);
-//			session.setAttribute("login.pwd", user_pwd);
-//			out.print("<html><body>");
-//			out.print("안녕하세요 " +user_id + "님!!!<br>");
-//			out.print("<a href='show'>회원정보 보기</a>");
-//			out.print("</body></html>");
-//			} else {
-//				out.print("<html><body><center>회원 아이디가 틀립니다.");
-//				out.print("<a href='login3.html'>다시 로그인 하기</a>");
-//				out.print("</body></html>");
-//			}
+
 		}
 	}

@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 //package dc.human.gbnb.humanConnect.dao;
 //
 //import java.sql.Connection;
@@ -25,6 +26,8 @@
 //   
 //   public void addCenterReg(VolunteerDetailDTO volunteerDetailDTO) {
 
+=======
+>>>>>>> refs/remotes/origin/master
 package dc.human.gbnb.humanConnect.dao;
 
 import java.sql.Connection;
@@ -42,9 +45,9 @@ import dc.human.gbnb.humanConnect.dto.VolunteerDetailDTO;
 
 public class VolunteerDetailDAO {
    
-//   private static final String driver = "oracle.jdbc.driver.OracleDriver";
 
-      
+//
+  //
    private PreparedStatement pstmt;
    private Connection con;
    private DataSource dataFactory;
@@ -88,6 +91,7 @@ public class VolunteerDetailDAO {
          e.printStackTrace();
       }
    }
+<<<<<<< HEAD
 }
    
 //   public void delMember(String id) {
@@ -359,3 +363,6 @@ public class VolunteerDetailDAO {
 ////      }
 ////   }
 //   }
+=======
+}
+>>>>>>> refs/remotes/origin/master

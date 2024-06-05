@@ -15,8 +15,8 @@ import dc.human.gbnb.humanConnect.dto.VolunteerDetailDTO;
 
 public class CenterRegDAO {
    
-//   private static final String driver = "oracle.jdbc.driver.OracleDriver";
 
+//
       
    private PreparedStatement pstmt;
    private Connection con;
@@ -74,35 +74,10 @@ public class CenterRegDAO {
    }
 
    
-//   public void delMember(String id) {
-//      try {
-//         con = dataFactory.getConnection();
-//         String query = "delete from t_member"+" where id=?";
-//         System.out.println("prepareStatement: "+query);
-//         pstmt = con.prepareStatement(query);
-//         pstmt.setString(1, id);
-//         pstmt.executeUpdate();
-//         pstmt.close();
-//         
-//      }catch(Exception e) {
-//         e.printStackTrace();
-//      }
-//   }
-//   
-//   public CenterRegDAO() {
-//      try {
-//         Context ctx = new InitialContext();
-//         Context envContext = (Context) ctx.lookup("java:/comp/env");
-//         dataFactory = (DataSource) envContext.lookup("jdbc/oracle");
-//      }catch(Exception e) {
-//         e.printStackTrace();
-//      }
-//   }
-//   
    public void listCenterReg(CenterRegDTO centerRegDTO) {
       List list = new ArrayList();
       try {
-//         connDB();
+
     	  Class.forName("oracle.jdbc.OracleDriver");
     	  con=DriverManager.getConnection(
 	               "jdbc:oracle:thin:@192.168.0.38/xe",
@@ -166,39 +141,5 @@ public class CenterRegDAO {
          }
  
    }
-//   
-//  // public boolean isExisted(CenterRegDTO CenterRegDTO) {
-//      boolean result = false;
-//      String id = CenterRegDTO.getId();
-//      String pwd = CenterRegDTO.getPwd();
-//      try {
-//         con = dataFactory.getConnection();
-//         String query ="select decode(count(*),1,'true','false') as result from t_member";
-//         query += " where id=? and pwd=?";
-//         System.out.println(query);
-//         pstmt = con.prepareStatement(query);
-//         pstmt.setString(1, id);
-//         pstmt.setString(2, pwd);
-//         ResultSet rs = pstmt.executeQuery();
-//         rs.next();
-//         result = Boolean.parseBoolean(rs.getString("result"));
-//         System.out.println("result="+result);
-//
-//               
-//      }catch (Exception e) {
-//         e.printStackTrace();
-//      }
-//      return result;
-//   }
-   
-//   private void connDB() {
-//      try {
-//         Class.forName(driver);
-//         System.out.println("Oracle 드라이버 로딩 성공");
-//         con = DriverManager.getConnection(url, user, pwd);
-//         System.out.println("Connection 생성 성공");
-//      } catch (Exception e) {
-//         e.printStackTrace();
-//      }
-//   }
+
    }
