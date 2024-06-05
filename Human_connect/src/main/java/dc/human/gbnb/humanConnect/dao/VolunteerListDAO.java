@@ -9,13 +9,13 @@ import java.util.List;
 
 import dc.human.gbnb.humanConnect.dto.VolunteerDTO;
 
-public class volunteerListDAO {
+public class VolunteerListDAO {
 
 	private Connection con;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 	
-	public volunteerListDAO() {
+	public VolunteerListDAO() {
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
 			con =DriverManager.getConnection("jdbc:oracle:thin:@192.168.0.42:1521/xe", "c##tableJava", "tableJava");
