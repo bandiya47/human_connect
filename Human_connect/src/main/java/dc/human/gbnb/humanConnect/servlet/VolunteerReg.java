@@ -1,3 +1,4 @@
+
 package dc.human.gbnb.humanConnect.servlet;
 
 
@@ -29,7 +30,7 @@ public class VolunteerReg extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
-
+		PrintWriter out = response.getWriter();
 
 
 		

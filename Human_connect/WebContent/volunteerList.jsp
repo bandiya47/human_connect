@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
-<%@ page import="jakarta.servlet.http.HttpSession" %>
-<%@ page import="jakarta.servlet.http.HttpServletRequest" %>
-<%@ page import="dc.human.gbnb.humanConnect.dto.UserDTO" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%-- <c:set var="contextPath" value="${pageContext.request.contextPath}"  /> --%>
+<%@ page import="jakarta.servlet.http.HttpSession"%>
+<%@ page import="jakarta.servlet.http.HttpServletRequest"%>
+<%@ page import="dc.human.gbnb.humanConnect.dto.UserDTO"%>
 
 <!DOCTYPE html>
 <html>
@@ -128,24 +129,34 @@
 
 			<div class="volunteerListVolRecruitList">
 				<p>구인 리스트</p>
-				<table>
-					<c:forEach items="${regList}" var="vol">
-						<tr>
-							<td>제목</td>
-							<td>${vol.vTitle }</td>
-							<td>봉사분야</td>
-							<td>${vol.ServiceCode }</td>
-							<td>시작일</td>
-							<td>${vol.vStartDate}</td>
-						</tr>
-						<tr>
-							<td>종료일</td>
-							<td>${vol.vEndDate}</td>
-							<td>활동요일</td>
-							<td>${vol.vWorkingDay }</td>
-						</tr>
-					</c:forEach>
-				</table>
+
+				<c:forEach items="${regList}" var="vol">
+					<c:choose>
+						<c:when test='${empty regList }'>
+							<tr align='center'>
+								<td colspan=6>조회된 데이터가 없습니다</td>
+							</tr>
+						</c:when>
+						<c:otherwise>
+							<table>
+								<tr>
+									<td>제목</td>
+									<td>${vol.vTitle }</td>
+									<td>봉사분야</td>
+									<td>${vol.ServiceCode }</td>
+									<td>시작일</td>
+									<td>${vol.vStartDate}</td>
+								</tr>
+								<tr>
+									<td>종료일</td>
+									<td>${vol.vEndDate}</td>
+									<td>활동요일</td>
+									<td>${vol.vWorkingDay }</td>
+								</tr>
+							</table>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
 			</div>
 		</div>
 		<div class="tempDiv2">

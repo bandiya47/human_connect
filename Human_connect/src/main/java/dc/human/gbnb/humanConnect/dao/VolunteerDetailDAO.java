@@ -1,3 +1,4 @@
+
 package dc.human.gbnb.humanConnect.dao;
 
 import java.sql.Connection;
@@ -61,7 +62,4 @@ public class VolunteerDetailDAO {
          e.printStackTrace();
       }
    }
-
-   
-
-   }
+}
