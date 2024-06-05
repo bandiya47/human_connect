@@ -7,13 +7,13 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class mainRequestTestDAO {
+public class MainRequestTestDAO {
 
     private static final String DB_URL = "jdbc:oracle:thin:@192.168.0.38/xe";
     private static final String DB_USER = "c##gbnb";
     private static final String DB_PASSWORD = "gbnb";
 
-    public mainRequestTestDAO() {
+    public MainRequestTestDAO() {
         try {
             Class.forName("oracle.jdbc.OracleDriver");
             System.out.println("Driver loaded successfully.");

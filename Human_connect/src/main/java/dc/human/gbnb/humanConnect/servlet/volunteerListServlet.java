@@ -10,11 +10,11 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import dc.human.gbnb.humanConnect.dao.VolunteerListDAO;
+import dc.human.gbnb.humanConnect.dao.volunteerListDAO;
 import dc.human.gbnb.humanConnect.dto.VolunteerDTO;
 
 @WebServlet("/volunteerList")
-public class VolunteerListServlet extends HttpServlet {
+public class volunteerListServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -34,7 +34,7 @@ public class VolunteerListServlet extends HttpServlet {
 		
 		
 		
-		VolunteerListDAO dao = new VolunteerListDAO();
+		volunteerListDAO dao = new volunteerListDAO();
 		List<VolunteerDTO> regList = dao.getRegList();
 		
 		request.setAttribute("regList", regList);

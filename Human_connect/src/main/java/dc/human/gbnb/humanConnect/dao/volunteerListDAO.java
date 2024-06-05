@@ -9,13 +9,13 @@ import java.util.List;
 
 import dc.human.gbnb.humanConnect.dto.VolunteerDTO;
 
-public class VolunteerListDAO {
+public class volunteerListDAO {
 
 	private Connection con;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 	
-	public VolunteerListDAO() {
+	public volunteerListDAO() {
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
 			con =DriverManager.getConnection("jdbc:oracle:thin:@192.168.0.42:1521/xe", "c##tableJava", "tableJava");
@@ -23,6 +23,10 @@ public class VolunteerListDAO {
 			e.printStackTrace();
 		}
 	}
+
+	
+	
+	
 	
 	public List<VolunteerDTO> getRegList() {
 		List<VolunteerDTO> regList = new ArrayList<>();

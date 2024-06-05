@@ -10,9 +10,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/mypagePrivacyCheck")
-public class mypagePrivacyCheck extends HttpServlet {
+public class MypagePrivacyCheck extends HttpServlet {
    
-	public mypagePrivacyCheck() {
+	public MypagePrivacyCheck() {
 		super();
 	}
 	

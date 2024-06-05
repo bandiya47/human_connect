@@ -2,9 +2,9 @@ package dc.human.gbnb.humanConnect.servlet;
 
 import java.io.IOException;
 
-import dc.human.gbnb.humanConnect.dao.mypagePrivacyEditDAO;
+import dc.human.gbnb.humanConnect.dao.MypagePrivacyEditDAO;
 import dc.human.gbnb.humanConnect.dto.UserDTO;
-import dc.human.gbnb.humanConnect.dto.mypagePrivacyEditDTO;
+import dc.human.gbnb.humanConnect.dto.MypagePrivacyEditDTO;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
@@ -18,13 +18,13 @@ import jakarta.servlet.http.HttpSession;
  * Servlet implementation class mypage_privacy_edit
  */
 @WebServlet("/privacyEdit")
-public class mypagePrivacyEdit extends HttpServlet {
+public class MypagePrivacyEdit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * Default constructor. 
      */
-    public mypagePrivacyEdit() {
+    public MypagePrivacyEdit() {
         // TODO Auto-generated constructor stub
     }
 
@@ -52,7 +52,7 @@ public class mypagePrivacyEdit extends HttpServlet {
 		String newEmail=request.getParameter("u_email");
 		String newPhone=request.getParameter("u_phone");
 		
-		mypagePrivacyEditDTO editDTO=new mypagePrivacyEditDTO();
+		MypagePrivacyEditDTO editDTO=new MypagePrivacyEditDTO();
 		
 		editDTO.setId(user.getUserId());
 		editDTO.setPw(newPwd);
@@ -61,7 +61,7 @@ public class mypagePrivacyEdit extends HttpServlet {
 		editDTO.setAddr(newAddr);
 		
 		
-		mypagePrivacyEditDAO editDAO=new mypagePrivacyEditDAO();
+		MypagePrivacyEditDAO editDAO=new MypagePrivacyEditDAO();
 		editDAO.privacyEdit(editDTO);
 		
 		response.sendRedirect("mypagePrivacyEdit.jsp");

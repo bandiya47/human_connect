@@ -4,12 +4,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import dc.human.gbnb.humanConnect.dto.mypagePrivacyCheckDTO;
-import dc.human.gbnb.humanConnect.dto.mypagePrivacyEditDTO;
-public class mypagePrivacyCheckDAO {
+import dc.human.gbnb.humanConnect.dto.MypagePrivacyCheckDTO;
+import dc.human.gbnb.humanConnect.dto.MypagePrivacyEditDTO;
+public class MypagePrivacyCheckDAO {
 	private Connection conn;
 
-		public mypagePrivacyCheckDAO() {
+		public MypagePrivacyCheckDAO() {
 			try {
 				Class.forName("oracle.jdbc.OracleDriver");
 				conn = DriverManager.getConnection(
@@ -22,8 +22,8 @@ public class mypagePrivacyCheckDAO {
 			}
 		}
 
-	public mypagePrivacyCheckDTO getUserDetails(String userId) {
-		mypagePrivacyCheckDTO user = null;
+	public MypagePrivacyCheckDTO getUserDetails(String userId) {
+		MypagePrivacyCheckDTO user = null;
 		try {
 			String sql = "SELECT U_NAME, U_ID, U_PWD, U_EMAIL, U_PHONE, U_ADDR FROM VOLUNTEER_USER WHERE U_ID = ?";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -31,7 +31,7 @@ public class mypagePrivacyCheckDAO {
 			ResultSet rs = pstmt.executeQuery();
 			System.out.println(sql);
 			if (rs.next()) {
-				user = new mypagePrivacyCheckDTO();
+				user = new MypagePrivacyCheckDTO();
 				user.setName(rs.getString("U_NAME"));
 				user.setId(rs.getString("U_ID"));
 				user.setPw(rs.getString("U_PWD"));
