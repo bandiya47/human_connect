@@ -11,7 +11,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import dc.human.gbnb.humanConnect.dto.CenterRegDTO;
-import dc.human.gbnb.humanConnect.dto.volunteerDetailDTO;
+import dc.human.gbnb.humanConnect.dto.VolunteerDetailDTO;
 
 public class CenterRegDAO {
    
