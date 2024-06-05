@@ -27,6 +27,7 @@ public class volunteerListDAO {
 	
 	
 	
+	
 	public List<volunteerDTO> getRegList() {
 		List<volunteerDTO> regList = new ArrayList<>();
 		try {
