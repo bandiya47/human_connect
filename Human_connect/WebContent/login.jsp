@@ -6,9 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
-<body>
+<body class="loginBody">
+<main>
+	<img src="./img/logo.png" width="750px" alt="로고">
     <form action="login" method="post">
         <div>
             <label for="userId">아이디</label>
@@ -24,6 +26,7 @@
         <c:if test="${param.error != null}">
             <div style="color: red;">Invalid userId or password</div>
         </c:if>
+        </main>
     </form>
 </body>
 </html>

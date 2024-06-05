@@ -13,10 +13,12 @@
     <div class="indexChange" id="indexChange">
         <span>
             <img src="./img/logo.png" width="750px" alt="로고">
-            <button id="indexLogin">로그인</button>
+            <form method="post" action="login" ecnType="utf-8">
+            	<button id="indexLogin">로그인</button>
+            </form>
         </span>
     </div>
-    <script src="./js/indexjs.js">
+    <script src="./js/index.js">
     </script>
 </body>
 </html>
