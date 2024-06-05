@@ -28,7 +28,7 @@ public class CenterRegServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
-
+//
 
 		
 		String vTitle = request.getParameter("vTitle");

@@ -30,7 +30,7 @@ public class CenterRegCheckServlet extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 
-
+//
 		String vTitle = request.getParameter("vTitle");
 		String vStartDate = request.getParameter("vStartDate");
 		String vEndDate = request.getParameter("vEndDate");

@@ -33,7 +33,7 @@ public class VolunteerReg extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 
-		
+		//
 		String vTitle = request.getParameter("vTitle");
 		String vStartDate = request.getParameter("vStartDate");
 		String vEndDate = request.getParameter("vEndDate");
