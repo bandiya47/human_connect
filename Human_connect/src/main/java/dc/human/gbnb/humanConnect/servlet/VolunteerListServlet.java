@@ -31,7 +31,7 @@ public class VolunteerListServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		
-		
+		//
 		
 		
 		VolunteerListDAO dao = new VolunteerListDAO();

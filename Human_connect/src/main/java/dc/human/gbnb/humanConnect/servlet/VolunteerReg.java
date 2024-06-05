@@ -1,3 +1,4 @@
+
 package dc.human.gbnb.humanConnect.servlet;
 
 
@@ -5,15 +6,16 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import dc.human.gbnb.humanConnect.dao.CenterRegDAO;
-import dc.human.gbnb.humanConnect.dto.CenterRegDTO;
+import dc.human.gbnb.humanConnect.dao.VolunteerDetailDAO;
+import dc.human.gbnb.humanConnect.dto.VolunteerDetailDTO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/centerRegCheck")
-public class CenterRegCheckServlet extends HttpServlet {
+@WebServlet("/volunteerReg")
+public class VolunteerReg extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doHandle(request, response);
@@ -30,7 +32,8 @@ public class CenterRegCheckServlet extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 
-//
+
+		//
 		String vTitle = request.getParameter("vTitle");
 		String vStartDate = request.getParameter("vStartDate");
 		String vEndDate = request.getParameter("vEndDate");
@@ -41,27 +44,25 @@ public class CenterRegCheckServlet extends HttpServlet {
 		String vWorkingDay = request.getParameter("vWorkingDay");
 		int vServiceCode = Integer.parseInt(request.getParameter("vServiceCode"));
 		int vRegAmnt = Integer.parseInt(request.getParameter("vRegAmnt"));
-		String vUploadFilePath = request.getParameter("vUploadFilePath");
-		String vInfo = request.getParameter("vInfo");
+		int vreg_amnt = Integer.parseInt(request.getParameter("vreg_amnt"));
+		String vreg_upload_file_path = request.getParameter("vreg_upload_file_path");
+		String vreg_info = request.getParameter("vreg_info");
 		
 		
-		CenterRegDTO CenterRegDTO = new CenterRegDTO();
+		VolunteerDetailDTO volunteerDetailDTO = new VolunteerDetailDTO();
 		
-		CenterRegDTO.setvTitle(vTitle);
-		CenterRegDTO.setvStartDate(vStartDate);
-		CenterRegDTO.setvEndDate(vEndDate);
-		CenterRegDTO.setvStartTime(vStartTime);
-		CenterRegDTO.setvLastTime(vLastTime);
-		CenterRegDTO.setvRStartDate(vRStartDate);
-		CenterRegDTO.setvREndDate(vREndDate);
-		CenterRegDTO.setvWorkingDay(vWorkingDay);
-		CenterRegDTO.setvServiceCode(vServiceCode);
-		CenterRegDTO.setvRegAmnt(vRegAmnt);
-		CenterRegDTO.setvUploadFilePath(vUploadFilePath);
-		CenterRegDTO.setvInfo(vInfo);
+
+		volunteerDetailDTO.setvStartDate(vStartDate);
+		volunteerDetailDTO.setvEndDate(vEndDate);
+		volunteerDetailDTO.setvStartTime(vStartTime);
+		volunteerDetailDTO.setvLastTime(vLastTime);
+		volunteerDetailDTO.setVreg_amnt(vreg_amnt);
+		volunteerDetailDTO.setVreg_upload_file_path(vreg_upload_file_path);
+		volunteerDetailDTO.setVreg_info(vreg_info);
 		
-		CenterRegDAO dao = new CenterRegDAO();
-		dao.addCenterReg(CenterRegDTO);
+		VolunteerDetailDAO dao = new VolunteerDetailDAO();
+		dao.addVolunteerDetail(volunteerDetailDTO);
+		
 
 		}
 	}
