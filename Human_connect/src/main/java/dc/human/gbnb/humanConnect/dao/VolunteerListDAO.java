@@ -7,15 +7,15 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import dc.human.gbnb.humanConnect.dto.volunteerDTO;
+import dc.human.gbnb.humanConnect.dto.VolunteerDTO;
 
-public class volunteerListDAO {
+public class VolunteerListDAO {
 
 	private Connection con;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 	
-	public volunteerListDAO() {
+	public VolunteerListDAO() {
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
 			con =DriverManager.getConnection("jdbc:oracle:thin:@192.168.0.42:1521/xe", "c##tableJava", "tableJava");
@@ -23,20 +23,16 @@ public class volunteerListDAO {
 			e.printStackTrace();
 		}
 	}
-
 	
-	
-	
-	
-	public List<volunteerDTO> getRegList() {
-		List<volunteerDTO> regList = new ArrayList<>();
+	public List<VolunteerDTO> getRegList() {
+		List<VolunteerDTO> regList = new ArrayList<>();
 		try {
 			String query = "SELECT V_TITLE,SERVICE_CODE,V_START_DATE,V_END_DATE,V_WORKING_DAY from volunteer ";
 
 			pstmt = con.prepareStatement(query);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				volunteerDTO dto = new volunteerDTO();
+				VolunteerDTO dto = new VolunteerDTO();
 				dto.setvTitle(rs.getString("vTitle"));
 				switch(rs.getString("serviceCode")) {
 					case "1" : dto.setServiceCode("청소/배식");

@@ -1,6 +1,6 @@
 package dc.human.gbnb.humanConnect.dto;
 
-public class volunteerDTO {
+public class VolunteerDTO {
 	
 	private String vNo;
 	private String uId;
