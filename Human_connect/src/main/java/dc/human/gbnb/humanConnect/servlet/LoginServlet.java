@@ -21,13 +21,17 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         
         UserDAO dao = new UserDAO();
-        boolean isValidUser = dao.validateUser(userId, password);
+        String userTable = dao.validateUser(userId, password);
         
-        if (isValidUser) {
+        if (userTable != null) {
             HttpSession session = request.getSession();
-            UserDTO user = dao.getUserDetails(userId);
+            UserDTO user = dao.getUserDetails(userId, userTable);
             session.setAttribute("user", user);
-            response.sendRedirect("mypagePrivacyCheck.jsp");
+            if ("volunteer_user".equals(userTable)) {
+                response.sendRedirect("main.jsp");
+            } else if ("center_mng_table".equals(userTable)) {
+                response.sendRedirect("centerMain.jsp");
+            }
         } else {
             response.sendRedirect("login.jsp?error=1");
         }

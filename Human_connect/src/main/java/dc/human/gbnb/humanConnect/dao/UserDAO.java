@@ -7,47 +7,60 @@ import java.sql.ResultSet;
 import dc.human.gbnb.humanConnect.dto.UserDTO;
 
 public class UserDAO {
-
     private Connection conn;
 
     public UserDAO() {
-    	try{
-			Class.forName("oracle.jdbc.OracleDriver");
-			
-			conn=DriverManager.getConnection(
-					"jdbc:oracle:thin:@192.168.0.38/xe",
-					"c##gbnb",
-					"gbnb"
-					);
-		}catch(Exception e){
-			e.printStackTrace();
-		}
+        try {
+            Class.forName("oracle.jdbc.OracleDriver");
+            conn = DriverManager.getConnection(
+                "jdbc:oracle:thin:@192.168.0.38/xe",
+                "c##gbnb",
+                "gbnb"
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public boolean validateUser(String userId, String password) {
-        String query = "SELECT * FROM volunteer_user WHERE U_ID = ? AND U_PWD = ?";
+    public String validateUser(String userId, String password) {
+        String volunteerQuery = "SELECT * FROM volunteer_user WHERE U_ID = ? AND U_PWD = ?";
+        String centerQuery = "SELECT * FROM center_mng_table WHERE C_ID = ? AND C_PWD = ?";
         
-        try (PreparedStatement pstmt = conn.prepareStatement(query)) {
-            pstmt.setString(1, userId);
-            pstmt.setString(2, password);
-            ResultSet rs = pstmt.executeQuery();
+        try (PreparedStatement volunteerPstmt = conn.prepareStatement(volunteerQuery)) {
+            volunteerPstmt.setString(1, userId);
+            volunteerPstmt.setString(2, password);
+            ResultSet rs = volunteerPstmt.executeQuery();
             
             if (rs.next()) {
-                System.out.println("User found: " + userId);
-                return true;
-            } else {
-                System.out.println("User not found: " + userId);
+                return "volunteer_user";
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         
-        return false;
+        try (PreparedStatement centerPstmt = conn.prepareStatement(centerQuery)) {
+            centerPstmt.setString(1, userId);
+            centerPstmt.setString(2, password);
+            ResultSet rs = centerPstmt.executeQuery();
+            
+            if (rs.next()) {
+                return "center_mng_table";
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return null;
     }
-    
-    
-    public UserDTO getUserDetails(String userId) {
-        String query = "SELECT * FROM volunteer_user WHERE U_ID = ?";
+
+    public UserDTO getUserDetails(String userId, String tableName) {
+        String query = "";
+        if ("volunteer_user".equals(tableName)) {
+            query = "SELECT * FROM volunteer_user WHERE U_ID = ?";
+        } else if ("center_mng_table".equals(tableName)) {
+            query = "SELECT * FROM center_mng_table WHERE C_ID = ?";
+        }
+        
         UserDTO user = null;
         
         try (PreparedStatement pstmt = conn.prepareStatement(query)) {
@@ -57,9 +70,9 @@ public class UserDAO {
             if (rs.next()) {
                 user = new UserDTO();
                 user.setUserId(rs.getString("U_ID"));
-                user.setName(rs.getString("U_NAME")); // 컬럼명이 대소문자 구분 없이 일치하는지 확인
+                user.setName(rs.getString("U_NAME"));
                 user.setPassword(rs.getString("U_PWD"));
-                user.setAddr(rs.getString("U_ADDR1"));                
+                user.setAddr(rs.getString("U_ADDR1"));
                 user.setEmail(rs.getString("U_EMAIL"));
                 user.setPhone(rs.getString("U_PHONE"));
             }
