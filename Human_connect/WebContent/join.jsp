@@ -1,84 +1,49 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
- 
+
 <!DOCTYPE html>
 <html lang="ko">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>회원가입 페이지</title>
-        <link rel="stylesheet" href="css/join.css">
+        <link rel="stylesheet" href="css/style.css">
         <script>
             function toggleSubmitButton() {
                 var checkbox = document.getElementById('agree');
                 var submitButton = document.getElementById('submitBtn');
                 submitButton.disabled = !checkbox.checked;
             }
-            function validateForm() {
-            	var u_Name = document.getElementsByName("u_Name")[0].value;
-            	var u_Sex = document.getElementById("u_sex").value;
-                var u_Id = document.getElementById("u_Id").value;
-                var u_Pwd = document.getElementsByName("u_Pwd")[0].value;
-                var u_Number = document.getElementsByName("u_Number")[0].value;
-                var u_Email = document.getElementsByName("u_Email")[0].value;
-				
-                
-                if (u_Name.trim() === "") {
-                    alert("이름을 입력해주세요.");
-                    return false;
-                }
-                if (u_Birth.trim() === "") {
-                    alert("생년월일을 입력해주세요.");
-                    return false;
-                }
-                if (u_Id.trim() === "") {
-                    alert("아이디를 입력해주세요.");
-                    return false;
-                }
-                if (u_Pwd.trim() === "") {
-                    alert("비밀번호를 입력해주세요.");
-                    return false;
-                }
-                if (u_Phone.trim() === "") {
-                    alert("휴대폰번호를 입력해주세요.");
-                    return false;
-                }
-                if (u_Email.trim() === "") {
-                    alert("이메일을 입력해주세요.");
-                    return false;
-                }
-                return true;
-            }
         </script>   
     </head>
-    <body>
-        <a href="main.html">
-            <img src="logo.png" class="joinLogo">
+    <body class="join">    
+        <a href="index.jsp">
+            <img src="img/logo.png" class="joinLogo">
         </a>
-        <form action="join" method="post" onsubmit="return validateForm()">
+        <form action="join" method="post">
         
-        <input type="text" name="u_Name" placeholder="이름 *" class="joinText"><br>
+        <input type="text" name="u_Name" placeholder="이름 *" class="joinText" required><br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="u_Sex" value="남성" class="checkBox" checked>Male
-        <input type="radio" name="u_Sex" value="여성" class="checkBox">Femal<br>
+        <input type="radio" name="u_Sex" value="M" class="joinCheckBox" checked>Male
+        <input type="radio" name="u_Sex" value="F" class="joinCheckBox" >Femal<br>
         
-        <input type="date" name="u_Birth" placeholder="생년월일 *" class="joinText"><br>
+        <input type="text" name="u_Bdate" placeholder="생년월일 *" class="joinText"><br>
         
        <!-- <form action="join" method="post"> -->
             <input type="text" name="u_Id" required class="joinId" placeholder="아이디 *">
-            <!-- <input type="submit" value="중복 확인" class="IdCheck"> -->
+            <!-- <input type="submit" value="중복 확인" class="joinIdCheck"> -->
        <!-- </form> -->
        
-        <input type="password" name="u_Pwd" placeholder="비밀번호 *" class="joinText"><br>
+        <input type="password" name="u_Pwd" placeholder="비밀번호 *" class="joinText" min="5" max="20"><br>
         <input type="password" name="u_PwdConfirm" placeholder="비밀번호 확인 *" class="joinText"><br>
         <input type="text" name="u_Addr1" placeholder="주소" class="joinText"><br>
         <input type="number" name="u_Phone" placeholder="휴대폰 번호 *" class="joinText"><br>
-        <input type="email" name="u_Email" placeholder="이메일 *" class="joinText"><br>
-        <div class="container">
-            <h1>약관 동의</h1>
-            <div class="terms">
+        <input type="email" name="u_Email" placeholder="이메일 *" class="joinText" ><br>
+        <div class="joinContainer">
+            <h1 class="joinTermstitle">약관 동의</h1>
+            <div class="joinTerms">
                 <h2>서비스 이용 약관</h2>
                 <p>
                     제 1 조 (목적)<br>
@@ -92,23 +57,16 @@
                 </p>
                 <!-- 약관의 나머지 내용 추가 -->
             </div>
-            <div class="checkbox">
+            <div class="joinCheckbox">
                 <label>
                     <input type="checkbox" id="agree" onclick="toggleSubmitButton()"> 약관에 동의합니다.
                 </label>
             </div>
-            <button type="submit" id="submitBtn" class="submit-btn" disabled>동의하고 가입하기</button>
+            <button type="submit" id="submitBtn" class="joinSubmit-btn" disabled>동의하고 가입하기</button>
+           <!-- <input type="hidden" name="command" value="addUser" /> --> 
         </div>
     </form>
-       <%
-        String message = (String) request.getAttribute("message");
-        if (message != null) {
-    %>
-        <script>alert("<%= message %>");</script>
-    <%
-        }
-    %>
-    <script>
+   <!--  <script>
     	function checkDuplicate() {
     		var u_Id = document.getElementsByName("u_Id")[0].value;
     		var xhr = new XMLHttpRequest();
@@ -124,7 +82,7 @@
     			}
     		};
     		xhr.send("u_Id=" + u_Id);
-    	}
-    </script>
+    	} 
+    </script>-->
     </body>
 </html>
