@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 //package dc.human.gbnb.humanConnect.servlet;
 //
 //
@@ -83,7 +83,7 @@
 ////			}
 //		}
 //	}
-=======
+
 package dc.human.gbnb.humanConnect.servlet;
 
 
@@ -168,4 +168,4 @@ public class volunteerReg extends HttpServlet {
 //			}
 		}
 	}
->>>>>>> refs/remotes/origin/master
+
