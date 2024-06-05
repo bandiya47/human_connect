@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 //package dc.human.gbnb.humanConnect.dao;
 //
 //import java.sql.Connection;
@@ -24,7 +24,7 @@
 //   private DataSource dataFactory;
 //   
 //   public void addCenterReg(VolunteerDetailDTO volunteerDetailDTO) {
-=======
+
 package dc.human.gbnb.humanConnect.dao;
 
 import java.sql.Connection;
@@ -88,10 +88,11 @@ public class VolunteerDetailDAO {
          e.printStackTrace();
       }
    }
+}
 
    
 //   public void delMember(String id) {
->>>>>>> refs/remotes/origin/master
+
 //      try {
 //    	  Class.forName("oracle.jdbc.OracleDriver");
 //    	  con=DriverManager.getConnection(
@@ -171,7 +172,7 @@ public class VolunteerDetailDAO {
 //   public void listCenterReg(VolunteerDetailDTO volunteerDetailDTO) {
 //      List list = new ArrayList();
 //      try {
-<<<<<<< HEAD
+
 ////         connDB();
 //    	  Class.forName("oracle.jdbc.OracleDriver");
 //    	  con=DriverManager.getConnection(
@@ -186,7 +187,7 @@ public class VolunteerDetailDAO {
 //    	 
 //         String query = "select V_TITLE, V_START_DATE, V_END_DATE, V_START_TIME, V_LAST_TIME, V_RSTART_DATE, V_REND_DATE, V_WORKING_DAY, SERVICE_CODE, V_MAX_AMNT, V_REG_AMNT, V_UPLOAD_FILE_PATH, V_INFO from volunteer where V_TITLE = ? ";
 //         System.out.println("prepareStatement: "+query);
-=======
+
 //         Context ctx = new InitialContext();
 //         Context envContext = (Context) ctx.lookup("java:/comp/env");
 //         dataFactory = (DataSource) envContext.lookup("jdbc/oracle");
@@ -272,7 +273,7 @@ public class VolunteerDetailDAO {
 //         String query ="select decode(count(*),1,'true','false') as result from t_member";
 //         query += " where id=? and pwd=?";
 //         System.out.println(query);
->>>>>>> refs/remotes/origin/master
+
 //         pstmt = con.prepareStatement(query);
 //         pstmt.setString(1, vTitle);
 //         
