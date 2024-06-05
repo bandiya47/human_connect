@@ -1,5 +1,6 @@
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //package dc.human.gbnb.humanConnect.dao;
 //
 //import java.sql.Connection;
@@ -26,6 +27,8 @@
 //   
 //   public void addCenterReg(VolunteerDetailDTO volunteerDetailDTO) {
 
+=======
+>>>>>>> refs/remotes/origin/master
 =======
 >>>>>>> refs/remotes/origin/master
 package dc.human.gbnb.humanConnect.dao;
@@ -91,6 +94,7 @@ public class VolunteerDetailDAO {
          e.printStackTrace();
       }
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 }
    
@@ -363,6 +367,9 @@ public class VolunteerDetailDAO {
 ////      }
 ////   }
 //   }
+=======
+}
+>>>>>>> refs/remotes/origin/master
 =======
 }
 >>>>>>> refs/remotes/origin/master
