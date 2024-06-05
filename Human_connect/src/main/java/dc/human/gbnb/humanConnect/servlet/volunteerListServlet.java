@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import dc.human.gbnb.humanConnect.dao.volunteerListDAO;
-import dc.human.gbnb.humanConnect.dto.volunteerDTO;
+import dc.human.gbnb.humanConnect.dto.VolunteerDTO;
 
 @WebServlet("/volunteerList")
 public class volunteerListServlet extends HttpServlet {
@@ -35,7 +35,7 @@ public class volunteerListServlet extends HttpServlet {
 		
 		
 		volunteerListDAO dao = new volunteerListDAO();
-		List<volunteerDTO> regList = dao.getRegList();
+		List<VolunteerDTO> regList = dao.getRegList();
 		
 		request.setAttribute("regList", regList);
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/volunteerList.jsp");

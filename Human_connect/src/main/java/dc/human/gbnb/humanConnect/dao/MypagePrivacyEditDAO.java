@@ -5,11 +5,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 import dc.human.gbnb.humanConnect.dto.UserDTO;
-import dc.human.gbnb.humanConnect.dto.mypagePrivacyEditDTO;
+import dc.human.gbnb.humanConnect.dto.MypagePrivacyEditDTO;
 
-public class mypagePrivacyEditDAO {
+public class MypagePrivacyEditDAO {
 	private Connection conn;
-	public mypagePrivacyEditDAO() {
+	public MypagePrivacyEditDAO() {
 		try{
 			Class.forName("oracle.jdbc.OracleDriver");
 			
@@ -23,7 +23,7 @@ public class mypagePrivacyEditDAO {
 		}
 	}
 	
-	public void privacyEdit(mypagePrivacyEditDTO DTO) {
+	public void privacyEdit(MypagePrivacyEditDTO DTO) {
 		String name=DTO.getName();
 		String id=DTO.getId();
 		String pw=DTO.getPw();

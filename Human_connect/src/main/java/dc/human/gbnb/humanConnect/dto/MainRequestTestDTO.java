@@ -1,6 +1,6 @@
 package dc.human.gbnb.humanConnect.dto;
 
-public class mainRequestTestDTO {
+public class MainRequestTestDTO {
 
 	String title;
 
