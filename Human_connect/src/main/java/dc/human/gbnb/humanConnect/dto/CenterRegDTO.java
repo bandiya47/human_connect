@@ -110,7 +110,7 @@ public class CenterRegDTO {
 		this.vInfo = vInfo;
 	}
 
-	
+	//
 
 
 	

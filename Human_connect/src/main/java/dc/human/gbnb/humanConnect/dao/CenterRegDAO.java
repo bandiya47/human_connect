@@ -167,7 +167,7 @@ public class CenterRegDAO {
  
    }
 //   
-//   public boolean isExisted(CenterRegDTO CenterRegDTO) {
+//  // public boolean isExisted(CenterRegDTO CenterRegDTO) {
 //      boolean result = false;
 //      String id = CenterRegDTO.getId();
 //      String pwd = CenterRegDTO.getPwd();
