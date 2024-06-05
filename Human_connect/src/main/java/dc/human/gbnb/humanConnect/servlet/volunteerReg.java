@@ -64,7 +64,7 @@ public class volunteerReg extends HttpServlet {
 		volunteerDetailDTO.setVreg_info(vreg_info);
 		
 		VolunteerDetailDAO dao = new VolunteerDetailDAO();
-		dao.addCenterReg(volunteerDetailDTO);
+		dao.addVolunteerDetail(volunteerDetailDTO);
 		
 //		if (result) {
 //			HttpSession session = request.getSession();
