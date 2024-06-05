@@ -4,8 +4,8 @@ public class CenterMainDTO {
     private String userId;
     private String name;
     private String phone;
-    private String status; // REG_RESULT 필드를 상태로 사용
-    private String rejectReason; // REJECT_RS 필드를 거절 사유로 사용
+    private String status; 
+    private String rejectReason; 
 
     public CenterMainDTO() {
     }
@@ -16,7 +16,7 @@ public class CenterMainDTO {
         this.phone = phone;        
     }
 
-    // Getter와 Setter 메서드
+
     public String getUserId() {
         return userId;
     }

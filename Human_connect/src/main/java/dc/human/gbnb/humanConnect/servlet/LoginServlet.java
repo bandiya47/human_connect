@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
             if ("volunteer_user".equals(userTable)) {
                 response.sendRedirect("main.jsp");
             } else if ("center_mng_table".equals(userTable)) {
-                response.sendRedirect("centerMain.jsp");
+                response.sendRedirect("centerMain");
             }
         } else {
             response.sendRedirect("login.jsp?error=1");

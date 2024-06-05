@@ -130,7 +130,7 @@ public class CenterMainDAO {
             if (rs.next()) {
                 title = rs.getString("V_TITLE");
             }
-            System.out.println("Latest Recruitment Title: " + title);  // Debugging statement
+            System.out.println("Latest Recruitment Title: " + title);
         } catch (Exception e) {
             e.printStackTrace();
         }

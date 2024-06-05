@@ -69,12 +69,21 @@ public class UserDAO {
             
             if (rs.next()) {
                 user = new UserDTO();
-                user.setUserId(rs.getString("U_ID"));
-                user.setName(rs.getString("U_NAME"));
-                user.setPassword(rs.getString("U_PWD"));
-                user.setAddr(rs.getString("U_ADDR1"));
-                user.setEmail(rs.getString("U_EMAIL"));
-                user.setPhone(rs.getString("U_PHONE"));
+                if ("volunteer_user".equals(tableName)) {
+                    user.setUserId(rs.getString("U_ID"));
+                    user.setName(rs.getString("U_NAME"));
+                    user.setPassword(rs.getString("U_PWD"));
+                    user.setAddr(rs.getString("U_ADDR1"));
+                    user.setEmail(rs.getString("U_EMAIL"));
+                    user.setPhone(rs.getString("U_PHONE"));
+                } else if ("center_mng_table".equals(tableName)) {
+                    user.setUserId(rs.getString("C_ID"));
+                    user.setName(rs.getString("C_NAME"));
+                    user.setPassword(rs.getString("C_PWD"));
+                    user.setAddr(rs.getString("C_ADDR1"));
+                    user.setEmail(rs.getString("C_EMAIL"));
+                    user.setPhone(rs.getString("C_PHONE"));
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
