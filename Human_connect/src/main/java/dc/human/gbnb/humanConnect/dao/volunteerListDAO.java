@@ -12,6 +12,9 @@ import dc.human.gbnb.humanConnect.dto.volunteerDTO;
 public class volunteerListDAO {
 
 	private Connection con;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+	
 	public volunteerListDAO() {
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
@@ -21,13 +24,16 @@ public class volunteerListDAO {
 		}
 	}
 
+	
+	
+	
 	public List<volunteerDTO> getRegList() {
 		List<volunteerDTO> regList = new ArrayList<>();
 		try {
-			String query = "SELECT V_TITLE,SERVICE_CODE,V_START_DATE,V_END_DATE,V_WORKING_DAY" + "from volunteer ";
+			String query = "SELECT V_TITLE,SERVICE_CODE,V_START_DATE,V_END_DATE,V_WORKING_DAY from volunteer ";
 
-			PreparedStatement pstmt = con.prepareStatement(query);
-			ResultSet rs = pstmt.executeQuery();
+			pstmt = con.prepareStatement(query);
+			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				volunteerDTO dto = new volunteerDTO();
 				dto.setvTitle(rs.getString("vTitle"));
