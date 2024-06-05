@@ -345,3 +345,237 @@ header{
     }
 }
 /**임시~~*****************************************************************************************************************/
+
+
+
+
+/**메인~~*****************************************************************************************************************/
+.main{
+    margin: 50px auto 0;
+    width: 980px;
+    >div{
+        margin-bottom: 10px;        
+    }
+}
+
+
+
+.mainFirstStack{
+    margin-top: 20px;
+    margin: auto;
+    width: 980px;
+    display: flex;
+}
+.mainFirstSide{
+    width: 15%;
+    /* border: gray solid 1px;
+    border-radius: 5px;
+    background-color: white; */
+    >div:nth-child(1){ /*보호소에서 어쩌고*/
+    margin-top: 37px;   /*윗마진*/
+    height: 115px;       /*높이*/
+    border: gray solid 1px;
+    border-radius: 5px;
+    background-color: white;
+    }
+    >div:nth-child(2){ /*뱃지 안내문*/
+    margin-top: 70px;   /*윗마진*/
+    height: 115px;       /*높이*/
+    border: gray solid 1px;
+    border-radius: 5px;
+    background-color: white;
+    }
+}
+.mainFirstMiddle{
+    margin-left: 15px;
+    width: 85%;
+    >div:nth-child(1){
+        font-size: 20px;
+        font-weight: bold; 
+        margin-bottom: 15px;
+        >img{
+            width: 20px;
+            height: 20px;
+        }  
+    }
+    >div:nth-child(2){
+    background-color: white;
+    border: gray solid 1px;
+    border-radius: 5px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    >table,th,td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 500px;
+        padding: 10px;
+    }
+    >table{
+        width: 95%;
+        margin: 10px 0px;
+        text-align: left;
+        margin-left: 15px;
+    }
+
+    }
+    >div:nth-child(3){                              /*전체보기*/
+    text-align: right;
+    margin-top: 15px;
+    >a{
+        text-decoration: none;  
+        color: black;
+        font-weight: bold;
+        }
+    }
+    >div:nth-child(4){
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        >img{
+            width: 20px;
+            height: 20px;
+        } 
+    }
+    >div:nth-child(5){
+        background-color: white;
+        border: gray solid 1px;
+        border-radius: 5px; 
+        padding-top: 10px;
+        padding-bottom: 10px;
+        >table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 500px;
+            padding: 10px;
+        }
+        >table{
+            width: 95%;
+            margin: 10px 0px;
+            text-align: left;
+            margin-left: 15px;
+        }
+
+        }
+    >div:nth-child(6){                              /*전체보기*/
+        text-align: right;
+        margin-top: 15px;
+        >a{
+            text-decoration: none;  
+            color: black;
+            font-weight: bold;
+            }
+        }
+}
+
+.mainSecondStack{
+    margin: auto;
+    width: 980px;
+    display: flex;
+}
+.mainSecondSide{
+    width: 15%;
+    
+    >div:nth-child(1){      /*이지봉사가이드*/
+        margin-top: 37px;   /*윗마진*/
+        height: 250px;       /*높이*/
+        border: gray solid 1px;
+        border-radius: 5px; 
+        background-color: white;
+    }
+}
+.mainSecondMiddle{
+    margin-left: 15px;
+    width: 85%;
+    >div:nth-child(1){
+        font-size: 20px;
+        font-weight: bold;   
+        margin-bottom: 15px;
+        >img{
+            width: 20px;
+            height: 20px;
+        } 
+    }
+    >div:nth-child(2){
+        background-color: white;
+        border: gray solid 1px;
+        border-radius: 5px; 
+        display: flex;
+        >div{ /*보호동물목록 슬라이드쇼*/
+            width: 250px;
+            height: 250px;
+            border: gray solid 1px;
+        }
+    }
+    >div:nth-child(3){                              /*전체보기*/
+        text-align: right;
+        margin-top: 15px;
+        >a{
+            text-decoration: none;  
+            color: black;
+            font-weight: bold;
+            }
+        }
+}
+
+.mainThirdStack{
+    margin: auto;
+    width: 980px;
+    display: flex;
+}
+
+.mainThridSide{
+    width: 15%;
+    
+    >div:nth-child(1){      /*공지사항*/
+        margin-top: 37px;   /*윗마진*/
+        height: 115px;       /*높이*/
+        border: gray solid 1px;
+        border-radius: 5px; 
+        background-color: white;
+    }
+}
+
+.MainThirdMiddle{
+    margin-left: 15px;
+    width: 85%;
+    >div:nth-child(1){
+        font-size: 20px;
+        font-weight: bold; 
+        margin-bottom: 15px;
+        >img{
+            width: 20px;
+            height: 20px;
+        }   
+    }
+    >div:nth-child(2){
+        background-color: white;
+        border: gray solid 1px;
+        border-radius: 5px; 
+        padding-top: 10px;
+        padding-bottom: 10px;
+        >table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 500px;
+            padding: 10px;
+        }
+        >table{
+            width: 95%;
+            margin: 10px 0px;
+            text-align: left;
+            margin-left: 15px;
+        }
+
+        }
+    >div:nth-child(3){                              /*전체보기*/
+        text-align: right;
+        margin-top: 15px;
+        >a{
+            text-decoration: none;  
+            color: black;
+            font-weight: bold;
+            }
+        }
+
+}
+/**메인끝~~*****************************************************************************************************************/

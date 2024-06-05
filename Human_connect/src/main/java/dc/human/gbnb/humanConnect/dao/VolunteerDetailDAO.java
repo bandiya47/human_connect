@@ -10,10 +10,10 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import dc.human.gbnb.humanConnect.dto.CenterRegDTO;
+import dc.human.gbnb.humanConnect.dto.volunteerDetailDTO;
 import dc.human.gbnb.humanConnect.dto.VolunteerDetailDTO;
 
-public class CenterRegDAO {
+public class VolunteerDetailDAO {
    
 //   private static final String driver = "oracle.jdbc.driver.OracleDriver";
 
@@ -22,7 +22,7 @@ public class CenterRegDAO {
    private Connection con;
    private DataSource dataFactory;
    
-   public void addCenterReg(CenterRegDTO centerRegDTO) {
+   public void addCenterReg(VolunteerDetailDTO volunteerDetailDTO) {
       try {
     	  Class.forName("oracle.jdbc.OracleDriver");
     	  con=DriverManager.getConnection(
@@ -31,18 +31,18 @@ public class CenterRegDAO {
 	               "gbnb"
 	               );
 
-         String vTitle = centerRegDTO.getvTitle();
-         String vStartDate = centerRegDTO.getvStartDate();
-         String vEndDate = centerRegDTO.getvEndDate();
-         String vStartTime = centerRegDTO.getvStartTime();
-         String vLastTime = centerRegDTO.getvLastTime();
-         String vRStartDate = centerRegDTO.getvRStartDate();
-         String vREndDate = centerRegDTO.getvREndDate();
-         String vWorkingDay = centerRegDTO.getvWorkingDay();
-         int vServiceCode = centerRegDTO.getvServiceCode();         
-         int vRegAmnt = centerRegDTO.getvRegAmnt();
-         String vUploadFilePath = centerRegDTO.getvUploadFilePath();
-         String vInfo = centerRegDTO.getvInfo();
+         String vTitle = volunteerDetailDTO.getvTitle();
+         String vStartDate = volunteerDetailDTO.getvStartDate();
+         String vEndDate = volunteerDetailDTO.getvEndDate();
+         String vStartTime = volunteerDetailDTO.getvStartTime();
+         String vLastTime = volunteerDetailDTO.getvLastTime();
+         String vRStartDate = volunteerDetailDTO.getvRStartDate();
+         String vREndDate = volunteerDetailDTO.getvREndDate();
+         String vWorkingDay = volunteerDetailDTO.getvWorkingDay();
+         int vServiceCode = volunteerDetailDTO.getvServiceCode();         
+         int vRegAmnt = volunteerDetailDTO.getvRegAmnt();
+         String vUploadFilePath = volunteerDetailDTO.getvUploadFilePath();
+         String vInfo = volunteerDetailDTO.getvInfo();
          
          
          
@@ -99,7 +99,7 @@ public class CenterRegDAO {
 //      }
 //   }
 //   
-   public void listCenterReg(CenterRegDTO centerRegDTO) {
+   public void listCenterReg(VolunteerDetailDTO volunteerDetailDTO) {
       List list = new ArrayList();
       try {
 //         connDB();
@@ -109,7 +109,7 @@ public class CenterRegDAO {
 	               "c##gbnb",
 	               "gbnb"
 	               );
-    	 String vTitle = centerRegDTO.getvTitle();
+    	 String vTitle = volunteerDetailDTO.getvTitle();
     	 
     	 System.out.println(vTitle);
     	 
@@ -141,21 +141,21 @@ public class CenterRegDAO {
             System.out.println(V_START_DATE);
             
 
-            centerRegDTO.setvTitle(V_TITLE);
-            centerRegDTO.setvStartDate(V_START_DATE);
-            centerRegDTO.setvEndDate(V_END_DATE);
-            centerRegDTO.setvStartTime(V_START_TIME);
-            centerRegDTO.setvLastTime(V_LAST_TIME);            
-            centerRegDTO.setvRStartDate(V_RSTART_DATE);
-            centerRegDTO.setvREndDate(V_REND_DATE);
-            centerRegDTO.setvWorkingDay(V_WORKING_DAY);
-            centerRegDTO.setvServiceCode(SERVICE_CODE);            
-            centerRegDTO.setvMaxAmnt(V_MAX_AMNT);
-            centerRegDTO.setvRegAmnt(V_REG_AMNT);
-            centerRegDTO.setvUploadFilePath(V_UPLOAD_FILE_PATH);
-            centerRegDTO.setvInfo(V_INFO);
+            volunteerDetailDTO.setvTitle(V_TITLE);
+            volunteerDetailDTO.setvStartDate(V_START_DATE);
+            volunteerDetailDTO.setvEndDate(V_END_DATE);
+            volunteerDetailDTO.setvStartTime(V_START_TIME);
+            volunteerDetailDTO.setvLastTime(V_LAST_TIME);            
+            volunteerDetailDTO.setvRStartDate(V_RSTART_DATE);
+            volunteerDetailDTO.setvREndDate(V_REND_DATE);
+            volunteerDetailDTO.setvWorkingDay(V_WORKING_DAY);
+            volunteerDetailDTO.setvServiceCode(SERVICE_CODE);            
+            volunteerDetailDTO.setvMaxAmnt(V_MAX_AMNT);
+            volunteerDetailDTO.setvRegAmnt(V_REG_AMNT);
+            volunteerDetailDTO.setvUploadFilePath(V_UPLOAD_FILE_PATH);
+            volunteerDetailDTO.setvInfo(V_INFO);
             
-            System.out.println(centerRegDTO.getvEndDate());
+            System.out.println(volunteerDetailDTO.getvEndDate());
             
         
          rs.close();
@@ -167,10 +167,10 @@ public class CenterRegDAO {
  
    }
 //   
-//   public boolean isExisted(CenterRegDTO CenterRegDTO) {
+//   public boolean isExisted(volunteerDetailDTO volunteerDetailDTO) {
 //      boolean result = false;
-//      String id = CenterRegDTO.getId();
-//      String pwd = CenterRegDTO.getPwd();
+//      String id = volunteerDetailDTO.getId();
+//      String pwd = volunteerDetailDTO.getPwd();
 //      try {
 //         con = dataFactory.getConnection();
 //         String query ="select decode(count(*),1,'true','false') as result from t_member";
