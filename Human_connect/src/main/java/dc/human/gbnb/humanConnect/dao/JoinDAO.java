@@ -48,18 +48,26 @@ public class JoinDAO {
 //    }
 	public void insertUser(JoinDTO join) {
         try {
-        	String sql = "INSERT INTO volunteer_user (U_NAME, U_SEX, U_BDATE, U_ID, U_PWD, U_ADDRESS, U_PHONE, U_EMAIL) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        	
+        	String u_Name = join.getU_Name();
+        	String u_Sex = join.getU_Sex();
+        	String u_Bdate = join.getU_Bdate();
+        	String u_Id = join.getU_Id();
+			String u_Pwd = join.getU_Pwd();
+			String u_Addr1 = join.getU_Addr1();
+			String u_Phone = join.getU_Phone();
+			String u_Email = join.getU_Email();
+        	String sql = "INSERT INTO volunteer_user (U_ID, U_NAME, U_SEX, U_BDATE, U_PWD, U_ADDR1, U_EMAIL, U_PHONE ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
             pstmt = conn.prepareStatement(sql); 
             
-            pstmt.setString(1, join.getU_Name());
-            pstmt.setString(2, join.getU_Sex());
-            pstmt.setString(3, join.getU_Bdate());
-            pstmt.setString(4, join.getU_Id());
+            pstmt.setString(1, join.getU_Id());
+            pstmt.setString(2, join.getU_Name());
+            pstmt.setString(3, join.getU_Sex());
+            pstmt.setString(4, join.getU_Bdate());
             pstmt.setString(5, join.getU_Pwd());
             pstmt.setString(6, join.getU_Addr1());
-            pstmt.setString(7, join.getU_Phone());
-            pstmt.setString(8, join.getU_Email());
+            pstmt.setString(7, join.getU_Email());
+            pstmt.setString(8, join.getU_Phone());
             pstmt.executeUpdate();
             
             conn.commit();

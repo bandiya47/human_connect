@@ -655,8 +655,61 @@ header{
     background-color: #ccc;
     cursor: not-allowed;
 }
-
-
-
-
 /**조인/회원가입 끝~~~************************************************************************************************************/
+/**파인드아이디/아이디찾기 시작~~******************************************************************************************************/
+		.find_logo {
+            align-items: center;
+            margin-left: 25%;
+            margin-right: 25%;
+            margin-top: 4%;
+            margin-bottom: 3%;
+            width: 50%;
+            height: 20%;
+        }
+        .findId {
+            font-family: Arial, sans-serif;
+            background-color: #FFC595;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .find_container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 450px;
+            margin-left: 32%;
+            margin-right: 32%;
+        }
+        .find_bold {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .find_label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .find_input[type="text"],
+        .find_input[type="email"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-left: 3%;
+        }
+        .find_button {
+            width: 100%;
+            padding: 10px;
+            background-color: #63caab;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 25px;
+        }
+        .find_button:hover {
+            background-color: #499c83;
+        }
+/**파인드아이디/아이디찾기 끝~~******************************************************************************************************/
