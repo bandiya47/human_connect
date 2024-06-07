@@ -129,8 +129,10 @@
 
 			<div class="volunteerListVolRecruitList">
 				<p>구인 리스트</p>
+				
 	<ul>
 		<c:forEach items="${volunteerList}" var="volunteerList">
+		<form name="test" method="post" action="volunteerDetail" encType="UTF-8">
 			<div>
 				<li>
 					봉사 번호 : ${volunteerList.v_no } <br>
@@ -144,7 +146,11 @@
 					신청 인원 : ${volunteerList.v_reg_amnt }<br>
 					모집 상태 : ${volunteerList.v_state }<br>
 				</li>
+				
+				    <input type="hidden" name="v_no" value=<c:out value="${volunteerList.v_no }" />>
+					<input type="submit" value="상세보기">
 			</div>
+		</form>	
 		</c:forEach>
 	</ul>
 				<c:forEach items="${regList}" var="vol">
