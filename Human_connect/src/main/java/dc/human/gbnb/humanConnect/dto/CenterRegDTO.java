@@ -2,7 +2,8 @@ package dc.human.gbnb.humanConnect.dto;
 
 
 public class CenterRegDTO {
-	
+	private int v_no;
+
 	private String uId;
 	private String vTitle;
 	private String vStartDate;
@@ -18,6 +19,13 @@ public class CenterRegDTO {
 	private int vState;
 	private String vUploadFilePath;
 	private String vInfo;
+	
+	public int getV_no() {
+		return v_no;
+	}
+	public void setV_no(int v_no) {
+		this.v_no = v_no;
+	}
 	
 	public String getuId() {
 		return uId;

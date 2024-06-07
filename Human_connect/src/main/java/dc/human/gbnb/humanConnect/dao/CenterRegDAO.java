@@ -84,15 +84,15 @@ public class CenterRegDAO {
 	               "c##gbnb",
 	               "gbnb"
 	               );
-    	 String vTitle = centerRegDTO.getvTitle();
+    	 int v_no = centerRegDTO.getV_no();
     	 
-    	 System.out.println(vTitle);
+  
     	 
     	 
-         String query = "select V_TITLE, V_START_DATE, V_END_DATE, V_START_TIME, V_LAST_TIME, V_RSTART_DATE, V_REND_DATE, V_WORKING_DAY, SERVICE_CODE, V_MAX_AMNT, V_REG_AMNT, V_UPLOAD_FILE_PATH, V_INFO from volunteer where V_TITLE = ? ";
+         String query = "select V_TITLE, V_START_DATE, V_END_DATE, V_START_TIME, V_LAST_TIME, V_RSTART_DATE, V_REND_DATE, V_WORKING_DAY, SERVICE_CODE, V_MAX_AMNT, V_REG_AMNT, V_UPLOAD_FILE_PATH, V_INFO from volunteer where V_Nq = ? ";
          System.out.println("prepareStatement: "+query);
          pstmt = con.prepareStatement(query);
-         pstmt.setString(1, vTitle);
+         pstmt.setInt(1, v_no);
          
          
          ResultSet rs = pstmt.executeQuery();
