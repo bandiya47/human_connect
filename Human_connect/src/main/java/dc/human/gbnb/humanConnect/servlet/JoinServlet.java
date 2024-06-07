@@ -24,8 +24,7 @@ public class JoinServlet extends HttpServlet {
         
         String action = request.getParameter("joinDAO");
         
-		
-        if ("join".equals(action)) {
+//        if ("join".equals(action)) {
         String u_Name = request.getParameter("u_Name");	
         String u_Sex = request.getParameter("u_Sex");
         String u_Bdate = request.getParameter("u_Bdate");
@@ -46,9 +45,13 @@ public class JoinServlet extends HttpServlet {
         jdto.setU_Email(u_Email);
 		
 		JoinDAO joinDAO = new JoinDAO();
-//		joinDAO.join(jdto);
+		joinDAO.insertUser(jdto);
 		
 		response.sendRedirect("index.jsp");
     	}
-    }
+//    }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
 }

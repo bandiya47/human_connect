@@ -66,23 +66,5 @@
            <!-- <input type="hidden" name="command" value="addUser" /> --> 
         </div>
     </form>
-   <!--  <script>
-    	function checkDuplicate() {
-    		var u_Id = document.getElementsByName("u_Id")[0].value;
-    		var xhr = new XMLHttpRequest();
-    		xhr.open("POST","checkDuplicate",true);
-    		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    		xhr.onreadystatechange = function() {
-    			if(xhr.readyState == 4 && xhr.status == 200) {
-    				if(xhr.responseText == "true") {
-    					alert("아이디가 중복되었습니다.");
-    				} else {
-    					alert("사용할 수 있는 아이디입니다.");
-    				}
-    			}
-    		};
-    		xhr.send("u_Id=" + u_Id);
-    	} 
-    </script>-->
     </body>
 </html>
