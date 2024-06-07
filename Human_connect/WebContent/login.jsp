@@ -22,11 +22,11 @@
         </div>
         <div>
             <button type="submit">로그인</button>
+            </form>
+            <form action="joinTest" method="get">
+            	<button type="submit">회원가입</button>
+            </form>
         </div>
-        <c:if test="${param.error != null}">
-            <div style="color: red;">Invalid userId or password</div>
-        </c:if>
-        </main>
-    </form>
+        </main>    
 </body>
 </html>
