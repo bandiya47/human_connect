@@ -1,12 +1,12 @@
 package dc.human.gbnb.humanConnect.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import dc.human.gbnb.humConnect.common.DBConnection;
 import dc.human.gbnb.humanConnect.dto.CenterMainDTO;
 
 public class CenterMainDAO {    
@@ -15,25 +15,14 @@ public class CenterMainDAO {
     private static final String DB_USER = "c##gbnb";
     private static final String DB_PASSWORD = "gbnb";
 
-    public CenterMainDAO() {
-        try {
-            Class.forName("oracle.jdbc.OracleDriver");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private Connection getConnection() throws Exception {
-        return DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-    }
-
+  
     public List<CenterMainDTO> getRecruitmentList(String centerId) {
         List<CenterMainDTO> list = new ArrayList<>();
         String query = "SELECT u.u_id, u.u_name, u.u_phone, a.reg_result, a.reject_rs "
                 + "FROM volunteer_user U, acception_res A, volunteer_reg R, volunteer V, center_mng_table C "
                 + "WHERE v.v_no = r.v_no AND c.c_id = v.c_id AND r.u_id = u.u_id AND u.u_id = a.u_id AND c.c_id = ?";
 
-        try (Connection con = getConnection();
+        try (Connection con = DBConnection.getConnection();
              PreparedStatement pstmt = con.prepareStatement(query)) {
             pstmt.setString(1, centerId);
             ResultSet rs = pstmt.executeQuery();
@@ -61,7 +50,7 @@ public class CenterMainDAO {
         		+ "FROM volunteer_user U, volunteer_reg R,ACCEPTION_RES A "
         		+ "WHERE R.u_id = U.u_id AND R.v_type = 1 AND U.U_ID = A.U_ID AND R.C_ID = ?";
         System.out.println(centerId);
-        try (Connection con = getConnection();
+        try (Connection con = DBConnection.getConnection();
              PreparedStatement pstmt = con.prepareStatement(query)) {
             pstmt.setString(1, centerId);
             ResultSet rs = pstmt.executeQuery();
@@ -75,7 +64,7 @@ public class CenterMainDAO {
                 dto.setRejectReason(rs.getString("reject_rs"));
                 list.add(dto);
             }
-            System.out.println("Volunteer List: " + list);  // Debugging statement
+            System.out.println("Volunteer List: " + list); 
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -91,7 +80,7 @@ public class CenterMainDAO {
         		+ "JOIN center_mng_table C ON A.c_name = C.c_name "
         		+ "WHERE C.c_name = (SELECT c_name FROM center_mng_table WHERE c_id = ?)";
 
-        try (Connection con = getConnection();
+        try (Connection con = DBConnection.getConnection();
              PreparedStatement pstmt = con.prepareStatement(query)) {
             pstmt.setString(1, centerId);
             ResultSet rs = pstmt.executeQuery();
@@ -114,7 +103,7 @@ public class CenterMainDAO {
     public void updateStatus(String userId, int status, String rejectReason) {
         String query = "UPDATE ACCEPTION_RES SET REG_RESULT = ?, REJECT_RS = ?, UPDATED_DATE = sysdate, UPDATED_ID = ? WHERE U_ID = ?";
 
-        try (Connection con = getConnection();
+        try (Connection con = DBConnection.getConnection();
              PreparedStatement pstmt = con.prepareStatement(query)) {
             pstmt.setInt(1, status);
             pstmt.setString(2, rejectReason);
@@ -130,16 +119,16 @@ public class CenterMainDAO {
         String title = "";
         String query = "SELECT V_TITLE FROM VOLUNTEER WHERE C_ID = ? ORDER BY created_date DESC FETCH FIRST 1 ROWS ONLY";
 
-        try (Connection con = getConnection();
+        try (Connection con = DBConnection.getConnection();
              PreparedStatement pstmt = con.prepareStatement(query)) {
             
-            pstmt.setString(1, centerId); // 매개변수 설정
+            pstmt.setString(1, centerId); 
             ResultSet rs = pstmt.executeQuery();
 
             if (rs.next()) {
                 title = rs.getString("V_TITLE");
             }
-            rs.close(); // ResultSet을 명시적으로 닫습니다.
+            rs.close();
             
             System.out.println("Latest Recruitment Title: " + title);
         } catch (Exception e) {
