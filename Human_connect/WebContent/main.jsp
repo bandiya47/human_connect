@@ -12,7 +12,7 @@
 </head>
 
 <body>
-
+<jsp:include page="nevi.jsp" />
 
 <!--여기부터 아래 내용 메인-->
 <div class="main">
@@ -22,7 +22,7 @@
             <div>뱃지안내문</div>
         </div>
         <div class="mainFirstMiddle">
-            <div><img src="../img/sole.png" alt="" class="">봉사 신청내역</div>
+            <div><img src="./img/sole.png" alt="" class="">봉사 신청내역</div>
             <div>
                 <table>
                     <tr>
@@ -40,7 +40,7 @@
                 </table>
             </div>
             <div><a href="">전체보기></a></div>
-            <div><img src="../img/sole.png" alt="" class="">입양 신청내역</div>
+            <div><img src="./img/sole.png" alt="" class="">입양 신청내역</div>
             <div>
                 <table>
                     <tr>
@@ -68,7 +68,7 @@
 
         </div>
         <div class="mainSecondMiddle">
-            <div><img src="../img/sole.png" alt="" class="">보호동물 목록</div>
+            <div><img src="./img/sole.png" alt="" class="">보호동물 목록</div>
                 <div><!--슬라이드쇼 들어갈 부분-->
                     <div></div>
                     <div></div>
@@ -86,7 +86,7 @@
             </div>
         </div>
         <div class="MainThirdMiddle">
-            <div><img src="../img/sole.png" alt="" class="">모집마감일이 임박한 봉사정보</div>
+            <div><img src="./img/sole.png" alt="" class="">모집마감일이 임박한 봉사정보</div>
                 <div>
                     <table>
                         <tr>
