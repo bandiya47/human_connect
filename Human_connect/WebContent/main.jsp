@@ -12,7 +12,7 @@
 </head>
 
 <body>
-
+<jsp:include page="nevi.jsp" />
 
 <!--여기부터 아래 내용 메인-->
 <div class="main">

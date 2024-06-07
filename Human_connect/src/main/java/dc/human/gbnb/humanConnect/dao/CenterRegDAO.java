@@ -89,7 +89,7 @@ public class CenterRegDAO {
   
     	 
     	 
-         String query = "select V_TITLE, V_START_DATE, V_END_DATE, V_START_TIME, V_LAST_TIME, V_RSTART_DATE, V_REND_DATE, V_WORKING_DAY, SERVICE_CODE, V_MAX_AMNT, V_REG_AMNT, V_UPLOAD_FILE_PATH, V_INFO from volunteer where V_Nq = ? ";
+         String query = "select V_TITLE, V_START_DATE, V_END_DATE, V_START_TIME, V_LAST_TIME, V_RSTART_DATE, V_REND_DATE, V_WORKING_DAY, SERVICE_CODE, V_MAX_AMNT, V_REG_AMNT, V_UPLOAD_FILE_PATH, V_INFO from volunteer where V_No = ? ";
          System.out.println("prepareStatement: "+query);
          pstmt = con.prepareStatement(query);
          pstmt.setInt(1, v_no);

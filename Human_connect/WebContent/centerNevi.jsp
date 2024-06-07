@@ -20,11 +20,6 @@
             <span>
                 <span></span>
                 <input type="button" value="로그아웃"></span>
-                 <form action="mypagePrivacyCheck.jsp">
-                        <input type="submit" value="마이페이지">
-                 </form>
-                
-            
             </div>
         </div>
 
@@ -35,10 +30,7 @@
                 <ul>            <!--네비게이션바-->
                     <li>
                         <img src="./img/soleWhite.png" alt="" class=""></span>
-                        
-                        <form action="test">
-                        <input type="submit" value="봉사신청">
-                        </form>
+                        <a href="">봉사신청</a></li>
                     <li>
                         <img src="./img/soleWhite.png" alt="" class=""></span>
                         <a href="">보호동물</a></li>

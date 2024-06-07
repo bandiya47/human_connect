@@ -36,7 +36,9 @@ public class TestDAO {
 		               );
 
 			
-			String sql = "SELECT v_no, c_id, v_title, v_start_date, v_end_date, v_start_time, v_last_time, v_rstart_date, v_rend_date, service_code, v_max_amnt, v_reg_amnt, v_state  FROM volunteer";
+			String sql = "SELECT v_no, c_id, v_title, v_start_date, v_end_date, v_start_time, "
+					+ "v_last_time, v_rstart_date, v_rend_date, service_code, v_max_amnt,"
+					+ " v_reg_amnt, v_state  FROM volunteer";
 			
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
@@ -45,6 +47,7 @@ public class TestDAO {
 				TestDTO dto = new TestDTO();
 				dto.setV_no(rs.getInt("v_no"));
 				dto.setC_id(rs.getString("c_id"));
+				dto.setV_title(rs.getString("v_title"));
 				dto.setV_start_date(rs.getString("v_start_date"));
 				dto.setV_end_date(rs.getString("v_end_date"));
 				dto.setV_start_time(rs.getString("v_start_time"));
