@@ -1,8 +1,8 @@
 package dc.human.gbnb.humanConnect.dto;
 
-
-public class CenterRegDTO {
+public class VolunteerRegListDTO {
 	
+	private String vNo;
 	private String uId;
 	private String vTitle;
 	private String vStartDate;
@@ -12,13 +12,19 @@ public class CenterRegDTO {
 	private String vRStartDate;
 	private String vREndDate;
 	private String vWorkingDay;
-	private int vServiceCode;
-	private int vMaxAmnt;
-	private int vRegAmnt;
-	private int vState;
+	private String serviceCode;
+	private String vMaxAmnt;
+	private String vRegAmnt;
+	private String vState;
 	private String vUploadFilePath;
 	private String vInfo;
-	
+	private String cCenterName;
+	public String getvNo() {
+		return vNo;
+	}
+	public void setvNo(String vNo) {
+		this.vNo = vNo;
+	}
 	public String getuId() {
 		return uId;
 	}
@@ -61,7 +67,7 @@ public class CenterRegDTO {
 	public void setvRStartDate(String vRStartDate) {
 		this.vRStartDate = vRStartDate;
 	}
-	public String getvREndDate() {
+	public String getvREnddate() {
 		return vREndDate;
 	}
 	public void setvREndDate(String vREndDate) {
@@ -73,28 +79,28 @@ public class CenterRegDTO {
 	public void setvWorkingDay(String vWorkingDay) {
 		this.vWorkingDay = vWorkingDay;
 	}
-	public int getvServiceCode() {
-		return vServiceCode;
+	public String getServiceCode() {
+		return serviceCode;
 	}
-	public void setvServiceCode(int vServiceCode) {
-		this.vServiceCode = vServiceCode;
+	public void setServiceCode(String serviceCode) {
+		this.serviceCode = serviceCode;
 	}
-	public int getvMaxAmnt() {
+	public String getvMaxAmnt() {
 		return vMaxAmnt;
 	}
-	public void setvMaxAmnt(int vMaxAmnt) {
+	public void setvMaxAmnt(String vMaxAmnt) {
 		this.vMaxAmnt = vMaxAmnt;
 	}
-	public int getvRegAmnt() {
+	public String getvRegAmnt() {
 		return vRegAmnt;
 	}
-	public void setvRegAmnt(int vRegAmnt) {
+	public void setvRegAmnt(String vRegAmnt) {
 		this.vRegAmnt = vRegAmnt;
 	}
-	public int getvState() {
+	public String getvState() {
 		return vState;
 	}
-	public void setvState(int vState) {
+	public void setvState(String vState) {
 		this.vState = vState;
 	}
 	public String getvUploadFilePath() {
@@ -109,16 +115,13 @@ public class CenterRegDTO {
 	public void setvInfo(String vInfo) {
 		this.vInfo = vInfo;
 	}
-
-	//
-
-
+	public String getcCenterName() {
+		return cCenterName;
+	}
+	public void setcCenterName(String cCenterName) {
+		this.cCenterName = cCenterName;
+	}
 	
 	
-
-
-
-
-
 	
 }

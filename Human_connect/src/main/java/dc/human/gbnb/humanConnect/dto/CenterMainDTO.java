@@ -4,8 +4,8 @@ public class CenterMainDTO {
     private String userId;
     private String name;
     private String phone;
-    private String status;
-    private String rejectReason;
+    private String status; 
+    private String rejectReason; 
 
     public CenterMainDTO() {
     }
@@ -13,8 +13,9 @@ public class CenterMainDTO {
     public CenterMainDTO(String userId, String name, String phone) {
         this.userId = userId;
         this.name = name;
-        this.phone = phone;
+        this.phone = phone;        
     }
+
 
     public String getUserId() {
         return userId;

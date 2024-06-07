@@ -8,67 +8,54 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dc.human.gbnb.humanConnect.dto.VolunteerDTO;
+import jakarta.activation.DataSource;
+
+
 
 public class VolunteerListDAO {
-
-	private Connection con;
 	private PreparedStatement pstmt;
-	private ResultSet rs;
-	
-	public VolunteerListDAO() {
-		try {
-			Class.forName("oracle.jdbc.OracleDriver");
-			con =DriverManager.getConnection("jdbc:oracle:thin:@192.168.0.42:1521/xe", "c##tableJava", "tableJava");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+	   private Connection conn;
+	   private DataSource dataFactory;
+	   
+		public List<VolunteerDTO> volunteerList() {
+			List<VolunteerDTO> volList = new ArrayList<>();
+			
+			try {
 
-	
-	
-	
-	
-	public List<VolunteerDTO> getRegList() {
-		List<VolunteerDTO> regList = new ArrayList<>();
-		try {
-			String query = "SELECT V_TITLE,SERVICE_CODE,V_START_DATE,V_END_DATE,V_WORKING_DAY from volunteer ";
+		    	  Class.forName("oracle.jdbc.OracleDriver");
+		    	  conn=DriverManager.getConnection(
+			               "jdbc:oracle:thin:@192.168.0.38/xe",
+			               "c##gbnb",
+			               "gbnb"
+			               );
 
-			pstmt = con.prepareStatement(query);
-			rs = pstmt.executeQuery();
-			while (rs.next()) {
-				VolunteerDTO dto = new VolunteerDTO();
-				dto.setvTitle(rs.getString("vTitle"));
-				switch(rs.getString("serviceCode")) {
-					case "1" : dto.setServiceCode("청소/배식");
-									break;
-					case "2" : dto.setServiceCode("산책");
-									break;
-					case "3" : dto.setServiceCode("목욕");
-									break;
-					case "4" : dto.setServiceCode("사진");
-									break;
-					case "5" : dto.setServiceCode("미용");
-									break;
-					case "6" : dto.setServiceCode("이동");
-									break;
-					case "7" : dto.setServiceCode("의료");
-									break;
+				String sql = "SELECT v_no, c_id, v_title, v_start_date, v_end_date, v_start_time, v_last_time, v_rstart_date, v_rend_date, service_code, v_max_amnt, v_reg_amnt, v_state  FROM volunteer";
+				
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				ResultSet rs = pstmt.executeQuery();
+
+				while(rs.next()) {
+					VolunteerDTO dto = new VolunteerDTO();
+					dto.setV_no(rs.getInt("v_no"));
+					dto.setC_id(rs.getString("c_id"));
+					dto.setV_start_date(rs.getString("v_start_date"));
+					dto.setV_end_date(rs.getString("v_end_date"));
+					dto.setV_start_time(rs.getString("v_start_time"));
+					dto.setV_last_time(rs.getString("v_last_time"));
+					dto.setV_rstart_date(rs.getString("v_rstart_date"));
+					dto.setV_rend_date(rs.getString("v_rend_date"));
+					dto.setService_code(rs.getInt("service_code"));
+					dto.setV_max_amnt(rs.getInt("v_max_amnt"));
+					dto.setV_reg_amnt(rs.getInt("v_reg_amnt"));
+					dto.setV_state(rs.getInt("v_state"));
+					
+					volList.add(dto);
 				}
-				dto.setvStartDate(rs.getString("vStartDate"));
-				dto.setvEndDate(rs.getString("vEndDate"));
-				dto.setvWorkingDay(rs.getString("vWorkingDay"));
 
-				regList.add(dto);
-
+			}catch(Exception e) {
+				e.printStackTrace();
 			}
-			rs.close();
-			pstmt.close();
-			con.close();
-		} catch (Exception e) {
-			e.printStackTrace();
+			
+			return volList;
 		}
-
-		return regList;
 	}
-
-}
