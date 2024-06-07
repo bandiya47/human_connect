@@ -30,15 +30,15 @@ public class VolunteerDetail extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 
 
-		int v_no = Integer.parseInt(request.getParameter("v_no"));
 		
+		String vTitle = "2차로";
 
 		
 		
 		CenterRegDTO CenterRegDTO = new CenterRegDTO();
 
 		
-		CenterRegDTO.setV_no(v_no);
+		CenterRegDTO.setvTitle(vTitle);
 		
 		
 		CenterRegDAO dao = new CenterRegDAO();

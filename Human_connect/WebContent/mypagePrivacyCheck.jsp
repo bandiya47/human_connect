@@ -61,7 +61,7 @@
 	            <div> 
 	            <form action="mypagePrivacyEdit.jsp" method="post">
                 	<div>                    
-                    	<input type="submit" value="수정">
+                    	<input type="submit" value="냥냥">
                		</div>
             </form></div>
 	        </div>

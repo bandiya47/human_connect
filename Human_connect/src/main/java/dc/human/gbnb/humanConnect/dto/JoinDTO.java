@@ -1,43 +1,18 @@
 package dc.human.gbnb.humanConnect.dto;
 
-import dc.human.gbnb.humanConnect.dao.JoinDAO;
+import java.time.LocalDate;
 
 public class JoinDTO {
-	
-	private String u_Name;
-    private String u_Sex;
-    private String u_Bdate;
-	private String u_Id;
+    private String u_Id;
     private String u_Pwd;
+    private String u_Name;
+    private String u_Sex;
+    private LocalDate u_Birth;
     private String u_Addr1;
     private String u_Phone;
     private String u_Email;
 
     // Getters and setters
-    public String getU_Name() {
-        return u_Name;
-    }
-
-    public void setU_Name(String u_Name) {
-        this.u_Name = u_Name;
-    }
-    
-    public String getU_Sex() {
-        return u_Sex;
-    }
-
-    public void setU_Sex(String u_Sex) {
-        this.u_Sex = u_Sex;
-    }
-    
-    public String getU_Bdate() {
-        return u_Bdate;
-    }
-
-    public void setU_Bdate(String u_Bdate) {
-        this.u_Bdate = u_Bdate;
-    }
-    
     public String getU_Id() {
         return u_Id;
     }
@@ -52,6 +27,30 @@ public class JoinDTO {
 
     public void setU_Pwd(String u_Pwd) {
         this.u_Pwd = u_Pwd;
+    }
+
+    public String getU_Name() {
+        return u_Name;
+    }
+
+    public void setU_Name(String u_Name) {
+        this.u_Name = u_Name;
+    }
+
+    public String getU_Sex() {
+        return u_Sex;
+    }
+
+    public void setU_Sex(String u_Sex) {
+        this.u_Sex = u_Sex;
+    }
+
+    public LocalDate getU_Birth() {
+        return u_Birth;
+    }
+
+    public void setU_Birth(LocalDate u_Birth) {
+        this.u_Birth = u_Birth;
     }
 
     public String getU_Addr1() {

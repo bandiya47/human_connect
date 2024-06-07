@@ -7,15 +7,14 @@
     <title>Main Request Test</title>
 </head>
 <body>
-<h2>메인페이지 테스트입니다</h2>
   <c:forEach var="title" items="${volList}" begin="0" end="3">
   
   <table>
   <tr>
-  <td>제목 : ${title}</td>
+  <td>${title}</td>
   </tr>
    <tr>
-  	<td>***********************************임시 구분선입니다*******************************</td>
+  	<td>냑냑</td>
   </tr>
   </table>     
     
