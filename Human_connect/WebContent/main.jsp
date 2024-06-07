@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -89,18 +90,24 @@
             <div><img src="./img/sole.png" alt="" class="">모집마감일이 임박한 봉사정보</div>
                 <div>
                     <table>
-                        <tr>
-                            <th>보호소</th>
-                            <th>날짜</th>
+                    
+                    
+                      <c:forEach var="volList" items="${volList}" begin="0" end="1">
+  						<form name="main" method="post" action="volunteerDetail" encType="UTF-8">
+							<input type="hidden" name="v_no" value="${volList.v_no }" />>
+						  <tr>
+						  	<th><input type="submit" value="${volList.v_title}"></th>
+						  	<th>날짜</th>
                             <th>시간</th>
                             <th>역할</th>
-                        </tr>
-                        <tr>
-                            <td>보호소</td>
-                            <td>날짜</td>
-                            <td>시간</td>
-                            <td>역할</td>
-                        </tr>
+						  </tr>
+
+  						</from>
+						    
+						    </c:forEach>
+                    
+                    
+
                     </table>
                 </div>
             <div><a href="">전체보기></a></div>

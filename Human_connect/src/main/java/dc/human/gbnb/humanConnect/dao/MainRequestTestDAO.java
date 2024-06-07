@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import dc.human.gbnb.humanConnect.dto.TestDTO;
+
 public class MainRequestTestDAO {
 
     private static final String DB_URL = "jdbc:oracle:thin:@192.168.0.38/xe";
@@ -29,16 +31,20 @@ public class MainRequestTestDAO {
         return con;
     }
 
-    public List<String> getVolList() {
-        List<String> list = new ArrayList<>();
-        String query = "SELECT V_TITLE FROM VOLUNTEER";
+    public List<TestDTO> getVolList() {
+        List<TestDTO> list = new ArrayList<>();
+        String query = "SELECT V_NO ,V_TITLE FROM VOLUNTEER";
 
         try (Connection con = getConnection(); 
              PreparedStatement pstmt = con.prepareStatement(query); 
              ResultSet rs = pstmt.executeQuery()) {
 
             while (rs.next()) {
-                list.add(rs.getString("V_TITLE"));
+            	TestDTO dto = new TestDTO();
+				dto.setV_no(rs.getInt("v_no"));
+				dto.setV_title(rs.getString("v_title"));
+            	
+                list.add(dto);
             }
         } catch (Exception e) {
             e.printStackTrace();

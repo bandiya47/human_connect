@@ -5,6 +5,7 @@ import java.util.List;
 
 import dc.human.gbnb.humanConnect.dao.MainRequestTestDAO;
 import dc.human.gbnb.humanConnect.dto.MainRequestTestDTO;
+import dc.human.gbnb.humanConnect.dto.TestDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -31,13 +32,13 @@ public class MainRequestTestServlet extends HttpServlet {
         MainRequestTestDAO dao = new MainRequestTestDAO(); // DAO 객체 생성
 
         // DAO로부터 리스트를 가져옴
-        List<String> volList = dao.getVolList(); 
+        List<TestDTO> volList = dao.getVolList(); 
 
         // 리스트를 요청 속성에 설정
         request.setAttribute("volList", volList);
 
         // 포워드 사용
-        RequestDispatcher dispatcher = request.getRequestDispatcher("mainRequestTest.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("main.jsp");
         dispatcher.forward(request, response);
     }
 }

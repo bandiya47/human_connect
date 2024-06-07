@@ -1,8 +1,13 @@
 package dc.human.gbnb.humanConnect.servlet;
 
 import java.io.IOException;
+import java.util.List;
+
+import dc.human.gbnb.humanConnect.dao.MainRequestTestDAO;
 import dc.human.gbnb.humanConnect.dao.UserDAO;
+import dc.human.gbnb.humanConnect.dto.TestDTO;
 import dc.human.gbnb.humanConnect.dto.UserDTO;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -28,7 +33,12 @@ public class LoginServlet extends HttpServlet {
             UserDTO user = dao.getUserDetails(userId, userTable);
             session.setAttribute("user", user);
             if ("volunteer_user".equals(userTable)) {
-                response.sendRedirect("main.jsp");
+                MainRequestTestDAO rdao = new MainRequestTestDAO();            
+                List<TestDTO> volList = rdao.getVolList();      
+                request.setAttribute("volList", volList);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("main.jsp");
+                dispatcher.forward(request, response);
+                
             } else if ("center_mng_table".equals(userTable)) {
                 response.sendRedirect("centerMain");
             }
