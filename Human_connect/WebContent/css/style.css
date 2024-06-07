@@ -579,3 +579,84 @@ header{
 
 }
 /**메인끝~~*****************************************************************************************************************/
+/**조인/회원가입 시작~~~************************************************************************************************************/
+.joinLogo {
+    align-items: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    width: 50%;
+    height: 20%;
+}
+.joinText {
+    width: 60%;
+    height: 30px;
+    margin: 10px;    
+    margin-left: 20%;
+    margin-right: 20%;
+    align-content: center;
+    align-items: center;
+}
+.joinId {
+    width: 60%;
+    height: 30px;
+    margin: 10px;    
+    margin-left: 20%;
+    margin-right: 20%;
+    align-content: center;
+    align-items: center;
+}
+.joinIdCheck {
+    height: 30px;
+    width: 100px;
+    margin-left: -5px;
+    margin-right: 10%;
+}
+.joinCheckBox {
+    margin: 10px;
+}
+.join {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #FFC595;
+}
+.join.maxWidth {
+    max-width: 500px;
+}
+.joinContainer {
+    max-width: 750px;
+    margin: 0 auto;
+}
+.joinTermstitle {
+    text-align: center;
+}
+.joinTerms {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    height: 200px;
+    overflow-y: scroll;
+}
+.joinCheckbox {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.joinSubmit-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #85e478;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.joinSubmit-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+
+
+
+/**조인/회원가입 끝~~~************************************************************************************************************/
